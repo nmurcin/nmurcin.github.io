@@ -31,6 +31,14 @@
   --glow-navy: rgba(0, 48, 87, 0.30);        /* GT-navy ambient glow */
   --btn-ghost-border: rgba(255, 255, 255, 0.25);
 
+  /* Accent-tinted shadows/glows/borders (theme-swappable so they keep the
+     right gold in both modes — dark uses the brightened gold) */
+  --accent-shadow-40: rgba(179, 156, 92, .40);
+  --accent-glow-60: rgba(201, 180, 119, .6);
+  --accent-border-45: rgba(201, 180, 119, .45);
+  --accent-shadow-20: rgba(201, 180, 119, .20);
+  --accent-shadow-35: rgba(201, 180, 119, .35);
+
   font-synthesis: none;
 }
 
@@ -49,7 +57,7 @@
   --accent: #806629;        /* deepened Tech Gold (5.0:1 on base, AA) */
   --accent-soft: #94772f;
   --accent-deep: #6a541f;
-  --accent-ink: #ffffff;    /* light-mode buttons use GT-navy bg + white text */
+  --accent-ink: #ffffff;    /* light-mode primary buttons use the deepened gold (#806629) bg + white ink */
 
   --bg-grad-top: #f5f6f8;
   --bg-grad-bottom: #eaeef3;
@@ -60,6 +68,13 @@
   --glow-accent: rgba(179, 163, 105, 0.12);
   --glow-navy: rgba(0, 48, 87, 0.07);
   --btn-ghost-border: rgba(0, 48, 87, 0.24);
+
+  /* Light-mode accent shadows/glows use the deepened gold (#806629 family) */
+  --accent-shadow-40: rgba(106, 84, 31, .40);
+  --accent-glow-60: rgba(128, 102, 41, .6);
+  --accent-border-45: rgba(128, 102, 41, .45);
+  --accent-shadow-20: rgba(128, 102, 41, .20);
+  --accent-shadow-35: rgba(128, 102, 41, .35);
 }
 
 /* Smooth the transition when toggling themes */
@@ -163,6 +178,8 @@ a { color: inherit; }
   content: ""; display: block; height: 2px; margin-top: 2px;
   background: var(--accent); border-radius: 2px;
 }
+/* Equal-specificity cascade: ensure hover wins on the active link too */
+.nav__links a.is-active:hover { color: var(--accent); }
 
 /* Controls cluster (hamburger + theme toggle) sit together on the right */
 .nav__controls { display: flex; align-items: center; }
@@ -231,7 +248,7 @@ a { color: inherit; }
   transition: transform 0.15s, background 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s;
 }
 .btn--primary { background: var(--accent); color: var(--accent-ink); }
-.btn--primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 8px 26px rgba(179, 156, 92, 0.40); }
+.btn--primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 8px 26px var(--accent-shadow-40); }
 .btn--ghost { border: 1.5px solid var(--btn-ghost-border); color: var(--ink); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
@@ -282,7 +299,7 @@ a { color: inherit; }
 .tl__marker {
   position: absolute; left: -1.8rem; top: 6px; width: 14px; height: 14px;
   background: var(--accent); border: 3px solid var(--bg); border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--accent), 0 0 14px rgba(201, 180, 119, 0.6);
+  box-shadow: 0 0 0 2px var(--accent), 0 0 14px var(--accent-glow-60);
 }
 .tl__top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .tl__content h3 { font-size: 1.2rem; }
@@ -375,7 +392,7 @@ a { color: inherit; }
   border-radius: var(--radius); padding: 1.6rem;
   transition: transform 0.2s, border-color 0.2s;
 }
-.skills__group:hover { transform: translateY(-4px); border-color: rgba(201, 180, 119, 0.45); }
+.skills__group:hover { transform: translateY(-4px); border-color: var(--accent-border-45); }
 .skills__group h3 {
   font-size: 1.05rem; margin-bottom: 0.9rem; padding-bottom: 0.6rem;
   border-bottom: 2px solid var(--accent); display: inline-block;
@@ -410,7 +427,7 @@ a { color: inherit; }
   background: var(--bg-3);
   transition: all 0.2s; min-width: 280px;
 }
-.contact__link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 180, 119, 0.20); }
+.contact__link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 20px var(--accent-shadow-20); }
 
 /* ===== Footer ===== */
 .footer {
@@ -424,7 +441,7 @@ a { color: inherit; }
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--accent); color: var(--accent-ink); border: none;
   font-size: 1.3rem; line-height: 1; cursor: pointer;
-  box-shadow: 0 6px 20px rgba(201, 180, 119, 0.35);
+  box-shadow: 0 6px 20px var(--accent-shadow-35);
   opacity: 0; visibility: hidden; transform: translateY(12px);
   transition: opacity 0.25s, transform 0.25s, visibility 0.25s, background 0.2s;
 }
@@ -486,6 +503,7 @@ a { color: inherit; }
   .hero__scroll { animation: none; }
   .to-top { transition: opacity 0.25s, visibility 0.25s; transform: none; }
   .to-top.is-visible { transform: none; }
+  .nav__toggle-bar { transition: none; }
   html { scroll-behavior: auto; }
 }
 
@@ -587,4 +605,9 @@ a { color: inherit; }
 
   /* Let long job dates wrap rather than crowd the role title. */
   .tl__date { white-space: normal; }
+}
+
+/* Ultrawide: widen the masonry gallery to 4 columns */
+@media (min-width: 1600px) {
+  .gallery { columns: 4 350px; }
 }
