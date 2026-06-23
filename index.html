@@ -7,7 +7,7 @@
   <title>Nathaniel Murcin | Aerospace Engineering Portfolio</title>
   <meta name="description" content="Aerospace engineering portfolio of Nathaniel Murcin: Georgia Tech AE, rocketry hardware, precision tooling, composites manufacturing, and CAD design." />
   <link rel="canonical" href="https://nmurcin.github.io/" />
-  <meta name="theme-color" content="#0d1014" />
+  <meta name="theme-color" content="#0a1622" />
 
   <!-- Favicon -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -19,6 +19,9 @@
   <meta property="og:description" content="Georgia Tech aerospace engineer focused on precision tooling, composites manufacturing, and flight hardware for experimental rockets." />
   <meta property="og:url" content="https://nmurcin.github.io/" />
   <meta property="og:image" content="https://nmurcin.github.io/assets/v2_p3_1.jpeg" />
+  <meta property="og:image:width" content="1075" />
+  <meta property="og:image:height" content="602" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:alt" content="Copper-tooled carbon-fiber rocket fin cans during assembly in the high bay" />
   <meta property="og:site_name" content="Nathaniel Murcin" />
 
@@ -55,6 +58,12 @@
       "url": "https://nmurcin.github.io/",
       "email": "mailto:nmurcin3@gatech.edu",
       "jobTitle": "Aerospace Engineering Student",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Atlanta",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      },
       "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "Georgia Institute of Technology"
@@ -80,16 +89,23 @@
   <!-- NAV -->
   <header class="nav">
     <a href="#top" class="nav__brand">NM</a>
-    <nav class="nav__links">
+    <nav class="nav__links" id="navLinks">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
-      <span class="theme-toggle__icon" aria-hidden="true">☾</span>
-    </button>
+    <div class="nav__controls">
+      <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+        <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+      </button>
+    </div>
   </header>
 
   <main>
@@ -163,7 +179,7 @@
         <div class="tl__content">
           <div class="tl__top">
             <h3>Manufacturing Engineering Intern</h3>
-            <span class="tl__date">Summer 2026 – Present</span>
+            <span class="tl__date">May – Aug 2026</span>
           </div>
           <p class="tl__org">Blue Origin</p>
           <ul>
@@ -285,7 +301,7 @@
           <figcaption>Composite fins on the airframe</figcaption>
         </figure>
         <figure class="gallery__item">
-          <img src="assets/v2_p4_0.png" alt="Machined aluminum molds for fin core thermoforming" width="793" height="660" loading="lazy" decoding="async" />
+          <img src="assets/v2_p4_0.webp" alt="Machined aluminum molds for fin core thermoforming" width="793" height="660" loading="lazy" decoding="async" />
           <figcaption>Machined molds for core thermoforming</figcaption>
         </figure>
         <figure class="gallery__item">
@@ -478,7 +494,6 @@
       <p class="contact__lead">Interested in talking? I'd love to hear from you.</p>
       <div class="contact__links">
         <a class="contact__link" href="mailto:nmurcin3@gatech.edu">✉ nmurcin3@gatech.edu</a>
-        <a class="contact__link" href="tel:+16033032612">☎ (603) 303-2612</a>
         <a class="contact__link" href="https://linkedin.com/in/nathaniel-murcin/" target="_blank" rel="noopener">in linkedin.com/in/nathaniel-murcin</a>
         <a class="contact__link" href="resume.pdf" target="_blank" rel="noopener">↓ Download Résumé (PDF)</a>
       </div>

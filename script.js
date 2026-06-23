@@ -229,3 +229,47 @@
     try { localStorage.setItem("theme", next); } catch (e) { /* storage blocked, theme still applies for this session */ }
   });
 })();
+
+// ===== Mobile nav (hamburger) =====
+// Toggles the collapsed nav dropdown shown by the <=620px media query.
+(function () {
+  const header = document.querySelector(".nav");
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (!header || !toggle || !links) return;
+
+  function setOpen(open) {
+    header.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+
+  toggle.addEventListener("click", () => {
+    setOpen(!header.classList.contains("is-open"));
+  });
+
+  // Close after choosing a destination so the page isn't left covered.
+  links.addEventListener("click", (e) => {
+    if (e.target.closest("a")) setOpen(false);
+  });
+
+  // Escape closes and returns focus to the toggle.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && header.classList.contains("is-open")) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  // A tap/click outside the header closes the menu.
+  document.addEventListener("click", (e) => {
+    if (header.classList.contains("is-open") && !header.contains(e.target)) {
+      setOpen(false);
+    }
+  });
+
+  // If the viewport grows back past the breakpoint, reset to the desktop bar.
+  window.matchMedia("(min-width: 621px)").addEventListener("change", (e) => {
+    if (e.matches) setOpen(false);
+  });
+})();

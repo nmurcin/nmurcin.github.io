@@ -1,29 +1,34 @@
 /* ===== Tokens ===== */
+/* Palette: Georgia Tech Navy (#003057) + Tech Gold (#B3A369).
+   Accent is brightened to #c9b477 on dark for legibility; on light it is
+   deepened to #806629 so gold text clears WCAG AA on white surfaces.
+   --accent-ink is the text colour that sits ON the accent (buttons, etc.). */
 :root {
-  --bg: #0d1014;            /* near-black base */
-  --bg-2: #11161d;          /* slightly lifted panels */
-  --bg-3: #161c25;          /* cards */
-  --ink: #eef1f5;           /* primary text */
-  --ink-soft: #9aa4b2;      /* secondary text */
-  --ink-dim: #8691a3;       /* tertiary (WCAG AA: 5.99:1 on base) */
-  --line: #232b36;          /* hairlines / borders */
-  --line-soft: #1b222c;
-  --accent: #ff5a1f;        /* engineering orange */
-  --accent-soft: #ff7d4d;
-  --accent-deep: #d9430f;
+  --bg: #0a1622;            /* deep GT-navy base */
+  --bg-2: #0e1c2c;          /* slightly lifted panels */
+  --bg-3: #12243a;          /* cards */
+  --ink: #eef2f7;           /* primary text (16.2:1 on base) */
+  --ink-soft: #9fb0c4;      /* secondary text (8.2:1 on base) */
+  --ink-dim: #7e90a6;       /* tertiary (WCAG AA: 5.6:1 on base) */
+  --line: #1d3148;          /* hairlines / borders */
+  --line-soft: #16263a;
+  --accent: #c9b477;        /* Tech Gold (brightened for dark bg) */
+  --accent-soft: #d9c894;
+  --accent-deep: #b39c5c;   /* darker gold for hover/press */
+  --accent-ink: #0a1622;    /* text on the gold accent (8.9:1, AAA) */
   --maxw: 1080px;
   --radius: 14px;
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 
   /* Theme-swappable surfaces (overridden by [data-theme="light"]) */
-  --bg-grad-top: #0d1014;
-  --bg-grad-bottom: #0b0e12;
-  --nav-bg: rgba(13, 16, 20, 0.65);
+  --bg-grad-top: #0a1622;
+  --bg-grad-bottom: #081019;
+  --nav-bg: rgba(10, 22, 34, 0.65);
   --nav-border: rgba(255, 255, 255, 0.06);
   --hero-name-1: #ffffff;
-  --hero-name-2: #c7cedb;
-  --glow-orange: rgba(255, 90, 31, 0.10);
-  --glow-blue: rgba(60, 110, 200, 0.08);
+  --hero-name-2: #c9d4e2;
+  --glow-accent: rgba(201, 180, 119, 0.10);  /* gold ambient glow */
+  --glow-navy: rgba(0, 48, 87, 0.30);        /* GT-navy ambient glow */
   --btn-ghost-border: rgba(255, 255, 255, 0.25);
 
   font-synthesis: none;
@@ -31,25 +36,30 @@
 
 /* ===== Light theme ===== */
 :root[data-theme="light"] {
-  --bg: #f7f8fa;
+  --bg: #f5f6f8;
   --bg-2: #eef1f5;
   --bg-3: #ffffff;
-  --ink: #1a1f27;
-  --ink-soft: #515a68;
-  --ink-dim: #626c7a;
-  --line: #dce1e8;
+  --ink: #13202e;           /* navy-tinted ink (15.3:1 on base) */
+  --ink-soft: #46535f;      /* 7.3:1 on base */
+  --ink-dim: #5c6776;       /* 5.3:1 on base */
+  --line: #d7dde4;
   --line-soft: #e7ebf0;
-  --shadow: 0 10px 40px rgba(20, 30, 50, 0.14);
+  --shadow: 0 10px 40px rgba(0, 48, 87, 0.14);
 
-  --bg-grad-top: #f7f8fa;
-  --bg-grad-bottom: #eef1f5;
-  --nav-bg: rgba(247, 248, 250, 0.75);
-  --nav-border: rgba(20, 30, 50, 0.08);
-  --hero-name-1: #1a1f27;
-  --hero-name-2: #4a5566;
-  --glow-orange: rgba(255, 90, 31, 0.10);
-  --glow-blue: rgba(60, 110, 200, 0.07);
-  --btn-ghost-border: rgba(20, 30, 50, 0.22);
+  --accent: #806629;        /* deepened Tech Gold (5.0:1 on base, AA) */
+  --accent-soft: #94772f;
+  --accent-deep: #6a541f;
+  --accent-ink: #ffffff;    /* light-mode buttons use GT-navy bg + white text */
+
+  --bg-grad-top: #f5f6f8;
+  --bg-grad-bottom: #eaeef3;
+  --nav-bg: rgba(245, 246, 248, 0.78);
+  --nav-border: rgba(0, 48, 87, 0.10);
+  --hero-name-1: #13202e;
+  --hero-name-2: #003057;   /* GT navy in the name gradient */
+  --glow-accent: rgba(179, 163, 105, 0.12);
+  --glow-navy: rgba(0, 48, 87, 0.07);
+  --btn-ghost-border: rgba(0, 48, 87, 0.24);
 }
 
 /* Smooth the transition when toggling themes */
@@ -75,15 +85,15 @@ body {
 .bg-fx {
   position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none;
   background:
-    radial-gradient(900px 700px at 78% 12%, var(--glow-orange), transparent 60%),
-    radial-gradient(800px 800px at 12% 88%, var(--glow-blue), transparent 60%),
+    radial-gradient(900px 700px at 78% 12%, var(--glow-accent), transparent 60%),
+    radial-gradient(800px 800px at 12% 88%, var(--glow-navy), transparent 60%),
     linear-gradient(180deg, var(--bg-grad-top) 0%, var(--bg-grad-bottom) 100%);
 }
 .bg-fx::before {
   /* slow-drifting accent glow */
   content: ""; position: absolute; width: 60vw; height: 60vw;
   top: -10%; right: -10%;
-  background: radial-gradient(circle, rgba(255, 90, 31, 0.12), transparent 65%);
+  background: radial-gradient(circle, var(--glow-accent), transparent 65%);
   filter: blur(40px);
   animation: drift 26s ease-in-out infinite alternate;
 }
@@ -110,7 +120,7 @@ a { color: inherit; }
 /* ===== Skip link (visible only on keyboard focus) ===== */
 .skip-link {
   position: absolute; top: -100px; left: 1rem; z-index: 200;
-  background: var(--accent); color: #fff; text-decoration: none;
+  background: var(--accent); color: var(--accent-ink); text-decoration: none;
   padding: 0.7rem 1.2rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
   transition: top 0.2s;
 }
@@ -127,6 +137,7 @@ a { color: inherit; }
 
 /* ===== Nav ===== */
 .nav {
+  /* position:fixed also anchors the absolutely-positioned mobile dropdown */
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0.9rem clamp(1rem, 4vw, 3rem);
@@ -137,7 +148,7 @@ a { color: inherit; }
 .nav__brand {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700; font-size: 1.15rem; letter-spacing: 0.06em;
-  color: #fff; text-decoration: none;
+  color: var(--ink); text-decoration: none;
   border: 1.5px solid var(--accent); border-radius: 8px;
   padding: 0.15rem 0.5rem;
 }
@@ -152,6 +163,27 @@ a { color: inherit; }
   content: ""; display: block; height: 2px; margin-top: 2px;
   background: var(--accent); border-radius: 2px;
 }
+
+/* Controls cluster (hamburger + theme toggle) sit together on the right */
+.nav__controls { display: flex; align-items: center; }
+
+/* Hamburger — hidden on desktop, shown at the mobile breakpoint */
+.nav__toggle {
+  display: none;
+  width: 44px; height: 44px; padding: 0;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  background: var(--bg-3); border: 1px solid var(--line); border-radius: 8px;
+  cursor: pointer; transition: border-color 0.2s;
+}
+.nav__toggle:hover { border-color: var(--accent); }
+.nav__toggle-bar {
+  display: block; width: 20px; height: 2px; border-radius: 2px;
+  background: var(--ink); transition: transform 0.25s ease, opacity 0.2s ease;
+}
+/* Animate to an X when open */
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ===== Theme toggle ===== */
 .theme-toggle {
@@ -198,8 +230,8 @@ a { color: inherit; }
   font-weight: 600; font-size: 0.95rem; text-decoration: none;
   transition: transform 0.15s, background 0.2s, box-shadow 0.2s, border-color 0.2s, color 0.2s;
 }
-.btn--primary { background: var(--accent); color: #fff; }
-.btn--primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 8px 26px rgba(255, 90, 31, 0.4); }
+.btn--primary { background: var(--accent); color: var(--accent-ink); }
+.btn--primary:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 8px 26px rgba(179, 156, 92, 0.40); }
 .btn--ghost { border: 1.5px solid var(--btn-ghost-border); color: var(--ink); }
 .btn--ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
@@ -250,7 +282,7 @@ a { color: inherit; }
 .tl__marker {
   position: absolute; left: -1.8rem; top: 6px; width: 14px; height: 14px;
   background: var(--accent); border: 3px solid var(--bg); border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--accent), 0 0 14px rgba(255, 90, 31, 0.6);
+  box-shadow: 0 0 0 2px var(--accent), 0 0 14px rgba(201, 180, 119, 0.6);
 }
 .tl__top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .tl__content h3 { font-size: 1.2rem; }
@@ -335,7 +367,6 @@ a { color: inherit; }
   padding: 0.55rem 0.8rem 0.7rem;
   background: var(--bg-3);
 }
-.gallery__item--render figcaption { background: var(--bg-3); }
 
 /* ===== Skills ===== */
 .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -344,7 +375,7 @@ a { color: inherit; }
   border-radius: var(--radius); padding: 1.6rem;
   transition: transform 0.2s, border-color 0.2s;
 }
-.skills__group:hover { transform: translateY(-4px); border-color: rgba(255, 90, 31, 0.4); }
+.skills__group:hover { transform: translateY(-4px); border-color: rgba(201, 180, 119, 0.45); }
 .skills__group h3 {
   font-size: 1.05rem; margin-bottom: 0.9rem; padding-bottom: 0.6rem;
   border-bottom: 2px solid var(--accent); display: inline-block;
@@ -379,7 +410,7 @@ a { color: inherit; }
   background: var(--bg-3);
   transition: all 0.2s; min-width: 280px;
 }
-.contact__link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 90, 31, 0.18); }
+.contact__link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 180, 119, 0.20); }
 
 /* ===== Footer ===== */
 .footer {
@@ -391,9 +422,9 @@ a { color: inherit; }
 .to-top {
   position: fixed; bottom: 1.6rem; right: 1.6rem; z-index: 60;
   width: 44px; height: 44px; border-radius: 50%;
-  background: var(--accent); color: #fff; border: none;
+  background: var(--accent); color: var(--accent-ink); border: none;
   font-size: 1.3rem; line-height: 1; cursor: pointer;
-  box-shadow: 0 6px 20px rgba(255, 90, 31, 0.35);
+  box-shadow: 0 6px 20px rgba(201, 180, 119, 0.35);
   opacity: 0; visibility: hidden; transform: translateY(12px);
   transition: opacity 0.25s, transform 0.25s, visibility 0.25s, background 0.2s;
 }
@@ -426,7 +457,8 @@ a { color: inherit; }
 .lightbox__nav--prev { left: 1rem; }
 .lightbox__nav--next { right: 1rem; }
 @media (max-width: 480px) {
-  .lightbox__nav { font-size: 2rem; width: 2.4rem; height: 2.4rem; }
+  /* Keep arrows >= 44px tap target (WCAG 2.5.5 / Apple HIG) */
+  .lightbox__nav { font-size: 2rem; width: 44px; height: 44px; }
   .lightbox__nav--prev { left: 0.25rem; }
   .lightbox__nav--next { right: 0.25rem; }
 }
@@ -462,11 +494,14 @@ a { color: inherit; }
   /* Sensible paper margins */
   @page { margin: 1.5cm; }
 
-  /* Force a clean light document regardless of the on-screen theme */
+  /* Force a clean light document regardless of the on-screen theme.
+     Accent is deepened to a paper-legible gold and -ink flipped to dark so
+     gold-backed elements (markers, bullets) read on white. */
   :root, :root[data-theme="light"] {
     --bg: #fff; --bg-2: #fff; --bg-3: #fff;
     --ink: #000; --ink-soft: #333; --ink-dim: #555;
     --line: #bbb; --line-soft: #ddd;
+    --accent: #6a541f; --accent-deep: #6a541f; --accent-ink: #fff;
   }
   html, body { background: #fff !important; color: #000 !important; }
 
@@ -509,9 +544,47 @@ a { color: inherit; }
   .skills { grid-template-columns: 1fr; }
   .gallery { columns: 2 240px; }
 }
+
+/* iOS Safari renders inline PDF <object> as a blank box. Below tablet width,
+   hide the embed and let the keyboard-accessible fallback link show instead. */
+@media (max-width: 768px) {
+  .resume-preview__frame { display: none; }
+  .resume-preview { box-shadow: none; }
+}
+
+/* Collapse the nav links into a hamburger dropdown before they crowd the bar. */
+@media (max-width: 620px) {
+  .nav__toggle { display: flex; }
+  /* Match the 44px hamburger for a consistent, tappable control cluster */
+  .theme-toggle { width: 44px; height: 44px; }
+  .nav__links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--nav-bg); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--nav-border);
+    padding: 0.5rem clamp(1rem, 4vw, 3rem) 1rem;
+    /* Collapsed by default; expanded when the header carries .is-open */
+    display: none;
+  }
+  .nav.is-open .nav__links { display: flex; }
+  .nav__links a {
+    padding: 0.85rem 0.25rem; font-size: 1rem;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav__links a:last-child { border-bottom: none; }
+  /* The active-underline pseudo-element looks odd stacked; hide it here. */
+  .nav__links a.is-active::after { display: none; }
+  .nav__links a.is-active { color: var(--accent); }
+}
+
 @media (max-width: 480px) {
-  .nav__links { gap: 0.8rem; }
-  .nav__links a { font-size: 0.82rem; }
   .gallery { columns: 1; }
   .project__stats { gap: 1.4rem; }
+
+  /* Contact buttons: drop the fixed 280px min-width so they don't overflow
+     a ~328px viewport; let them fill the column instead. */
+  .contact__link { min-width: unset; width: 100%; max-width: 360px; }
+
+  /* Let long job dates wrap rather than crowd the role title. */
+  .tl__date { white-space: normal; }
 }
