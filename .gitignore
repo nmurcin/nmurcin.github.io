@@ -1,1 +1,19 @@
 README.md
+
+# Secrets / local env — never commit credentials to a public repo
+.env
+.env.*
+*.env
+secrets.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+config.local.js
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
