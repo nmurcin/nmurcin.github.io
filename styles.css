@@ -1,43 +1,45 @@
 /* ===== Tokens ===== */
-/* Palette: Georgia Tech Navy (#003057) + Tech Gold (#B3A369).
-   Accent is brightened to #c9b477 on dark for legibility; on light it is
-   deepened to #806629 so gold text clears WCAG AA on white surfaces.
-   --accent-ink is the text colour that sits ON the accent (buttons, etc.). */
+/* Palette: official Georgia Tech brand colors.
+     Navy  #003057 (canvas + panels are built from this GT-navy family)
+     Gold  #B3A369 (Tech Gold — used at full strength; clears WCAG AA on both
+                    the navy canvas 7.05:1 and the cards 5.96:1)
+   On light backgrounds the gold is deepened to #806629 so gold text clears
+   WCAG AA on white. --accent-ink is the text colour that sits ON the gold. */
 :root {
-  --bg: #0a1622;            /* deep GT-navy base */
-  --bg-2: #0e1c2c;          /* slightly lifted panels */
-  --bg-3: #12243a;          /* cards */
-  --ink: #eef2f7;           /* primary text (16.2:1 on base) */
-  --ink-soft: #9fb0c4;      /* secondary text (8.2:1 on base) */
-  --ink-dim: #7e90a6;       /* tertiary (WCAG AA: 5.6:1 on base) */
-  --line: #1d3148;          /* hairlines / borders */
-  --line-soft: #16263a;
-  --accent: #c9b477;        /* Tech Gold (brightened for dark bg) */
-  --accent-soft: #d9c894;
-  --accent-deep: #b39c5c;   /* darker gold for hover/press */
-  --accent-ink: #0a1622;    /* text on the gold accent (8.9:1, AAA) */
+  --bg: #06192e;            /* deep GT-navy canvas (true navy, not near-black) */
+  --bg-2: #0a2138;          /* slightly lifted panels */
+  --bg-3: #0e2748;          /* cards — a clear step up from the canvas */
+  --ink: #eef2f7;           /* primary text (15.8:1 on base) */
+  --ink-soft: #9fb0c4;      /* secondary text (8.0:1 on base) */
+  --ink-dim: #7e90a6;       /* tertiary (WCAG AA: 5.4:1 on base) */
+  --line: #1c3a5c;          /* hairlines / borders (navy-tinted) */
+  --line-soft: #123052;
+  --accent: #b3a369;        /* Tech Gold — official, full strength */
+  --accent-soft: #c7b784;
+  --accent-deep: #9c8c52;   /* darker gold for hover/press */
+  --accent-ink: #06192e;    /* GT-navy text on the gold accent (7.05:1) */
   --maxw: 1080px;
   --radius: 14px;
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 
   /* Theme-swappable surfaces (overridden by [data-theme="light"]) */
-  --bg-grad-top: #0a1622;
-  --bg-grad-bottom: #081019;
-  --nav-bg: rgba(10, 22, 34, 0.65);
-  --nav-border: rgba(255, 255, 255, 0.06);
+  --bg-grad-top: #06192e;
+  --bg-grad-bottom: #04121f;
+  --nav-bg: rgba(6, 25, 46, 0.68);
+  --nav-border: rgba(179, 163, 105, 0.14);   /* faint gold hairline under nav */
   --hero-name-1: #ffffff;
   --hero-name-2: #c9d4e2;
-  --glow-accent: rgba(201, 180, 119, 0.10);  /* gold ambient glow */
-  --glow-navy: rgba(0, 48, 87, 0.30);        /* GT-navy ambient glow */
+  --glow-accent: rgba(179, 163, 105, 0.12);  /* Tech Gold ambient glow */
+  --glow-navy: rgba(0, 48, 87, 0.38);        /* GT-navy ambient glow */
   --btn-ghost-border: rgba(255, 255, 255, 0.25);
 
   /* Accent-tinted shadows/glows/borders (theme-swappable so they keep the
-     right gold in both modes — dark uses the brightened gold) */
-  --accent-shadow-40: rgba(179, 156, 92, .40);
-  --accent-glow-60: rgba(201, 180, 119, .6);
-  --accent-border-45: rgba(201, 180, 119, .45);
-  --accent-shadow-20: rgba(201, 180, 119, .20);
-  --accent-shadow-35: rgba(201, 180, 119, .35);
+     right gold in both modes — dark uses full-strength Tech Gold #b3a369) */
+  --accent-shadow-40: rgba(156, 140, 82, .40);
+  --accent-glow-60: rgba(179, 163, 105, .6);
+  --accent-border-45: rgba(179, 163, 105, .45);
+  --accent-shadow-20: rgba(179, 163, 105, .20);
+  --accent-shadow-35: rgba(179, 163, 105, .35);
 
   font-synthesis: none;
 }
@@ -163,9 +165,14 @@ a { color: inherit; }
 .nav__brand {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700; font-size: 1.15rem; letter-spacing: 0.06em;
-  color: var(--ink); text-decoration: none;
-  border: 1.5px solid var(--accent); border-radius: 8px;
+  color: var(--accent-ink); text-decoration: none;
+  background: var(--accent); border: 1.5px solid var(--accent); border-radius: 8px;
   padding: 0.15rem 0.5rem;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.nav__brand:hover {
+  background: var(--accent-deep); border-color: var(--accent-deep);
+  transform: translateY(-1px); box-shadow: 0 6px 18px var(--accent-shadow-35);
 }
 .nav__links { display: flex; gap: clamp(0.8rem, 2.5vw, 2rem); }
 .nav__links a {
@@ -273,20 +280,34 @@ a { color: inherit; }
 .about__text strong { color: var(--ink); font-weight: 600; }
 .about__facts {
   background: var(--bg-3); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 1.6rem;
+  /* Tech Gold top edge ties the card to the GT palette */
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius); padding: 1.5rem 1.6rem;
+  line-height: 1.4;   /* tighter rhythm inside the card than the page body (1.65) */
 }
-.about__facts h3 { font-size: 1.05rem; margin-bottom: 0.9rem; }
-.fact__school { font-weight: 600; color: var(--ink); margin-bottom: 0.1rem; }
-.fact__deg { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.8rem; }
-.fact__cw { font-size: 0.82rem; color: var(--ink-dim); margin-top: 0.9rem; line-height: 1.5; }
+/* Card header: "Education" heading beside the interlocking-GT mark */
+.about__facts-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+.about__facts h3 { font-size: 1.05rem; margin: 0; }
+.gt-logo { height: 34px; width: auto; flex: none; }
+.gt-logo__face   { fill: var(--accent); }              /* Tech Gold face */
+.gt-logo__shadow { fill: var(--ink); }                 /* white-on-navy backing (dark mode) */
+:root[data-theme="light"] .gt-logo__shadow { fill: #003057; }  /* navy backing on white (light mode) */
+
+.fact__school { font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; }
+.fact__deg { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 1rem; }
+.fact__cw { font-size: 0.82rem; color: var(--ink-dim); margin-top: 1rem; line-height: 1.55; }
 .about__facts ul { list-style: none; }
 .about__facts li {
-  padding: 0.45rem 0 0.45rem 1.3rem; position: relative; color: var(--ink-soft); font-size: 0.96rem;
+  padding: 0.55rem 0 0.55rem 1.3rem; position: relative; color: var(--ink-soft); font-size: 0.96rem;
   border-bottom: 1px dashed var(--line);
 }
-.about__facts li:last-child { border-bottom: none; }
+.about__facts li:first-child { padding-top: 0.15rem; }
+.about__facts li:last-child { border-bottom: none; padding-bottom: 0.15rem; }
 .about__facts li strong { color: var(--ink); }
-.about__facts li::before { content: "▸"; color: var(--accent); position: absolute; left: 0; }
+.about__facts li::before { content: "▸"; color: var(--accent); position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
 
 /* ===== Experience / Timeline ===== */
 .timeline { position: relative; padding-left: 1.8rem; }
@@ -305,7 +326,14 @@ a { color: inherit; }
 .tl__content h3 { font-size: 1.2rem; }
 .tl__date { color: var(--ink-dim); font-size: 0.88rem; font-weight: 500; white-space: nowrap; }
 .tl__org { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin: 0.15rem 0 0.7rem; }
+/* Focus-area sub-heading within a single role (e.g. Blue Origin's two teams) */
+.tl__subhead {
+  color: var(--ink); font-weight: 600; font-size: 0.9rem;
+  letter-spacing: 0.02em; margin: 0.9rem 0 0.4rem;
+}
+.tl__subhead:first-of-type { margin-top: 0.2rem; }
 .tl__content ul { list-style: none; }
+.tl__content ul + .tl__subhead { margin-top: 1rem; }
 .tl__content li {
   position: relative; padding-left: 1.2rem; margin-bottom: 0.5rem;
   color: var(--ink-soft); font-size: 0.98rem;
