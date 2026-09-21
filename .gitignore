@@ -1,6 +1,4 @@
-README.md
-
-# Secrets / local env — never commit credentials to a public repo
+﻿# Secrets and local configuration
 .env
 .env.*
 *.env
@@ -11,8 +9,12 @@ secrets.*
 *.pfx
 credentials.json
 config.local.js
-
-# OS / editor cruft
+# Generated dependencies and private QA/build output
+node_modules/
+.codex-finalizer/
+presentation/.build/
+__pycache__/
+# OS and editor
 .DS_Store
 Thumbs.db
 .vscode/

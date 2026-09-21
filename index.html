@@ -1,550 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="puXqQdYOni_7Xcv1-quEOG1gan9JZYwJJ6wjmhf37nc">
-  <title>Nathaniel Murcin | Aerospace Engineering Portfolio</title>
-  <meta name="description" content="Aerospace engineering portfolio of Nathaniel Murcin: Georgia Tech AE, rocketry hardware, precision tooling, composites manufacturing, and CAD design.">
-  <link rel="canonical" href="https://nmurcin.github.io/">
-  <meta name="theme-color" content="#06192e">
-
-  <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="any">
-
-  <!-- Open Graph (LinkedIn, Slack, iMessage, etc.) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Nathaniel Murcin | Aerospace Engineering Portfolio">
-  <meta property="og:description" content="Georgia Tech aerospace engineering student and Blue Origin fluids & manufacturing intern — cryogenic fluid systems, precision tooling, composites manufacturing, GD&T, and flight hardware for experimental rockets.">
-  <meta property="og:url" content="https://nmurcin.github.io/">
-  <meta property="og:image" content="https://nmurcin.github.io/assets/v2_p3_1.jpeg">
-  <meta property="og:image:width" content="1075">
-  <meta property="og:image:height" content="602">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:alt" content="Vacuum bagging a carbon-fiber rocket fin layup for oven cure">
-  <meta property="og:site_name" content="Nathaniel Murcin">
-
-  <!-- Twitter / X card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nathaniel Murcin | Aerospace Engineering Portfolio">
-  <meta name="twitter:description" content="Georgia Tech aerospace engineer focused on precision tooling, composites manufacturing, and flight hardware for experimental rockets.">
-  <meta name="twitter:image" content="https://nmurcin.github.io/assets/v2_p3_1.jpeg">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Apply saved theme before paint to avoid a flash of the wrong theme -->
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem("theme");
-        var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
-        document.documentElement.setAttribute("data-theme", theme);
-      } catch (e) { /* localStorage blocked, fall back to default dark theme */ }
-    })();
-  </script>
-
-  <!-- Structured data: ProfilePage -> Person -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Nathaniel Murcin",
-      "url": "https://nmurcin.github.io/",
-      "email": "mailto:nmurcin3@gatech.edu",
-      "jobTitle": "Aerospace Engineering Student",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Atlanta",
-        "addressRegion": "GA",
-        "addressCountry": "US"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Georgia Institute of Technology"
-      },
-      "knowsAbout": ["CNC Machining", "Composites Manufacturing", "GD&T", "Design for Manufacture", "CAD", "Finite Element Analysis"],
-      "sameAs": [
-        "https://linkedin.com/in/nathaniel-murcin/",
-        "https://github.com/nmurcin",
-        "https://arc.aiaa.org/doi/10.2514/6.2024-85690"
-      ]
-    }
-  }
-  </script>
-</head>
-<body>
-
-  <!-- Skip to content (keyboard / screen-reader) -->
-  <a href="#about" class="skip-link">Skip to content</a>
-
-  <!-- Ambient background (glow + faint grid) -->
-  <div class="bg-fx" aria-hidden="true"></div>
-
-  <!-- NAV -->
-  <header class="nav">
-    <a href="#top" class="nav__brand">NM</a>
-    <nav class="nav__links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="nav__controls">
-      <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span class="nav__toggle-bar" aria-hidden="true"></span>
-        <span class="nav__toggle-bar" aria-hidden="true"></span>
-        <span class="nav__toggle-bar" aria-hidden="true"></span>
-      </button>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
-        <span class="theme-toggle__icon" aria-hidden="true">☾</span>
-      </button>
-    </div>
-  </header>
-
-  <main>
-
-  <!-- HERO -->
-  <section id="top" class="hero">
-    <div class="hero__inner">
-      <p class="hero__eyebrow">Aerospace Engineering Portfolio</p>
-      <h1 class="hero__name">Nathaniel Murcin</h1>
-      <p class="hero__tagline">
-        Georgia Tech aerospace engineer focused on where design meets the shop floor:
-        precision tooling, composites manufacturing, and flight hardware for experimental rockets.
-      </p>
-      <div class="hero__cta">
-        <a href="#projects" class="btn btn--primary">View Projects</a>
-        <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn--ghost">Download Résumé</a>
-      </div>
-    </div>
-    <div class="hero__scroll">↓ scroll</div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="section__head">
-      <span class="section__num">01</span>
-      <h2>About</h2>
-    </div>
-    <div class="about">
-      <div class="about__text">
-        <p>
-          I'm an aerospace engineering student at <strong>Georgia Tech</strong> who likes to be where the
-          design meets the shop floor. As the <strong>Fin Design &amp; Manufacturing Lead</strong> for Georgia Tech
-          Experimental Rocketry (GTXR), I've spent two years taking composite fin structures from high-level
-          design and flutter analysis all the way to machined tooling and cured flight hardware.
-        </p>
-        <p>
-          I'm currently a <strong>fluids &amp; manufacturing engineering intern at Blue Origin</strong> in Cape
-          Canaveral, splitting my time between ground systems fluids engineering — where I designed a cryogenic
-          tank-farm P&amp;ID for a ground-test facility — and lunar manufacturing, building precision tooling.
-          Previously, at <strong>Pursuit Aerospace</strong>, I designed quick-change fixtures and quick-check
-          gauges and developed a documented supercleaning process, consistently cutting cycle time and cost on
-          production parts.
-        </p>
-        <p>
-          I'm most at home with <strong>CNC machining, composites layup, GD&amp;T, and design-for-manufacture</strong>.
-          I care about tight tolerances, repeatable processes, and designs the next person can actually build.
-        </p>
-      </div>
-      <aside class="about__facts">
-        <div class="about__facts-head">
-          <h3>Education</h3>
-          <!-- Official Georgia Tech interlocking-GT mark (public domain, Wikimedia).
-               Back layer uses .gt-logo__shadow so it flips white-on-navy (dark)
-               / navy (light) — both approved GT color combinations. -->
-          <svg class="gt-logo" viewBox="0 0 250 157.48767" role="img" aria-label="Georgia Tech">
-            <g transform="matrix(.81578 0 0 .81578 1.1766 1.1197)">
-              <path class="gt-logo__shadow" d="m120 60.7v49.5h27.6l2.7-14.1h8.6c-5.1 21.4-28.7 35.6-56.4 33.4-26.3-2-54.5-16.9-54.4-44.7 0.1-30.7 27.6-48.4 53.3-49.5 17.2-0.7 36.5 5.9 50.4 17.4 0.8 0.7 1 0.8 1.1 0.9s0.2 0.1 0.9 0.7l0.8 0.6h30.7v-54.9h-31.9v15.3c-13-7.6-33.6-14.9-57.3-14.8-27.1 0.1-53.5 11.2-72.5 30.4-15.5 15.8-23.8 35-23.6 54.3 0.2 18.9 8.8 37 24 50.9 19.4 17.7 47.8 26.9 75.8 24.6 21.8-1.8 41.2-6.6 55.4-13.7v5.4h33.8v-56.2h8.1v62.5h-16.2v31.9h74.9v-31.9h-16.2v-62.6h34.2l2.5 14.1h27.7v-49.5h-184z"/>
-              <path class="gt-logo__face" d="m125.4 104.8h17.6l2.7-14.1h19.6l-0.5 3.1c-3.9 25.9-30.9 43.6-62.8 41.2-28.7-2.2-59.5-18.9-59.4-50.1 0.1-29.9 25.3-53.5 58.5-54.9 18.5-0.8 39.2 6.3 54.1 18.6 0.6 0.5 0.6 0.5 0.7 0.6s0.2 0.1 0.5 0.4h23.3v-44.2h-21v19.2l-4.5-2.3c-11.5-8-32.6-16.4-57.6-16.4h-0.4c-25.8 0.1-50.8 10.6-68.7 28.8-14.4 14.7-22.3 32.6-22 50.4 0.2 17.4 8.1 34.1 22.2 46.9 18.3 16.7 45.1 25.4 71.7 23.2 23.2-1.9 43.5-7.3 57.3-15.2l4.1-2.4-0.1 9.3h22.8v-56.2h19v73.4h-16.2v21h64v-21h-16.2v-73.4h44.2l2.5 14.1h17.7v-38.7h-173.1v38.7z"/>
-            </g>
-          </svg>
-        </div>
-        <p class="fact__school">Georgia Institute of Technology</p>
-        <p class="fact__deg">B.S. Aerospace Engineering</p>
-        <ul>
-          <li><strong>GPA 4.00</strong> (Faculty Honors)</li>
-          <li>Aug 2023 – May 2027</li>
-          <li>Atlanta, GA</li>
-        </ul>
-        <p class="fact__cw">Coursework: Rocket Propulsion · Thermodynamics · Structural Analysis · System Dynamics &amp; Controls</p>
-      </aside>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <div class="section__head">
-      <span class="section__num">02</span>
-      <h2>Experience</h2>
-    </div>
-    <div class="timeline">
-
-      <div class="tl__item">
-        <div class="tl__marker"></div>
-        <div class="tl__content">
-          <div class="tl__top">
-            <h3>Fluids &amp; Manufacturing Engineering Intern</h3>
-            <span class="tl__date">May – Aug 2026</span>
-          </div>
-          <p class="tl__org">Blue Origin · Cape Canaveral, FL</p>
-          <p class="tl__subhead">Ground Systems Fluids Engineering</p>
-          <ul>
-            <li>Designed the <strong>cryogenic tank-farm P&amp;ID</strong> for a ground-test facility (fill, pressurization, relief, vent, transfer); delivered the first issue in one week and cut component count <strong>~60%</strong> in the final version by challenging requirements and simplifying.</li>
-            <li>Built the bill of materials and drove procurement in parallel with in-progress design and analysis (concurrent engineering) to hold an aggressive schedule.</li>
-            <li>Authored the <strong>process hazard analysis (HAZOP)</strong> preparation package for the cryogenic storage and transfer system.</li>
-          </ul>
-          <p class="tl__subhead">Lunar Manufacturing</p>
-          <ul>
-            <li>Designed a universal, non-damaging <strong>mandrel-holding fixture</strong> over four iterations, eliminating FOD and part damage.</li>
-            <li>Owned all structural analysis, closing every failure mode with positive margin and reversing a design direction based on FEA.</li>
-            <li>Led requirements coordination for a <strong>tool-tracking software</strong> effort, driving it to a QR-code asset-registry implementation.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl__item">
-        <div class="tl__marker"></div>
-        <div class="tl__content">
-          <div class="tl__top">
-            <h3>Engineering Intern</h3>
-            <span class="tl__date">Aug – Dec 2025</span>
-          </div>
-          <p class="tl__org">Pursuit Aerospace · Newburyport, MA</p>
-          <ul>
-            <li>Designed, modeled, and built <strong>15 quick-change dot-peen marking fixtures</strong>, cutting load/unload time from ~6s to 1s per part.</li>
-            <li>In a Kaizen workshop on the lock-lug line, moved from batch to one-piece flow and designed quick-check gauges that dropped inspection from 40s to 2s and <strong>cut production time 55%</strong>.</li>
-            <li>Developed and documented an in-house supercleaning process for a Rolls-Royce component, <strong>saving $1,000/part</strong> and 3 days of lead time (approved for long-term use).</li>
-            <li>Applied GD&amp;T and process-control standards across fixture and component designs.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl__item">
-        <div class="tl__marker"></div>
-        <div class="tl__content">
-          <div class="tl__top">
-            <h3>Fin Design &amp; Manufacturing Lead</h3>
-            <span class="tl__date">Aug 2023 – Present</span>
-          </div>
-          <p class="tl__org">Georgia Tech Experimental Rocketry (GTXR) · Atlanta, GA</p>
-          <ul>
-            <li>Redesigned composite fin structures and fixturing after a roll-coupling failure, integrating structural and aerodynamic analysis to improve flight reliability.</li>
-            <li>Designed, modeled, and CAM-programmed a precision fin alignment jig with <strong>±0.1° cant tolerance</strong>, applying DFM and GD&amp;T for manufacturability and repeatability.</li>
-            <li>Machined flight and ground hardware on CNC mill, waterjet, and manual lathe; verified accuracy through iterative inspection.</li>
-            <li>Supported launch and integration of two rockets (supersonic &amp; hypersonic) at the FAR site in Mojave, CA; ran post-launch failure analysis.</li>
-            <li>Built mechanical test setups to measure in-plane shear modulus of composite structures and compared results to FEA.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl__item">
-        <div class="tl__marker"></div>
-        <div class="tl__content">
-          <div class="tl__top">
-            <h3>Undergraduate Researcher</h3>
-            <span class="tl__date">Jan 2026 – Present</span>
-          </div>
-          <p class="tl__org">Ben T. Zinn Combustion Laboratory · Atlanta, GA</p>
-          <ul>
-            <li>Designed and built tubing layouts for multi-gas transport, and reduced PIV datasets for attached-flame analysis.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl__item">
-        <div class="tl__marker"></div>
-        <div class="tl__content">
-          <div class="tl__top">
-            <h3>Undergraduate Research Assistant</h3>
-            <span class="tl__date">Jan – May 2025</span>
-          </div>
-          <p class="tl__org">Vertical Lift Research Center of Excellence (VLRCOE) · Atlanta, GA</p>
-          <ul>
-            <li>Ran life-cycle testing on commercial Li-ion battery packs across <strong>800+ cycles</strong>, contributing to research modeling battery degradation vs. cycle count.</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="pub">
-      <span class="pub__tag">Publications</span>
-      <p>
-        Co-authored <a class="pub__link" href="https://arc.aiaa.org/doi/10.2514/6.2024-85690" target="_blank" rel="noopener"><em>Shear Modulus Testing in Composite Sandwich Panels</em></a>, published in the
-        <strong>AIAA Journal</strong> and presented at the AIAA Region II Student Conference.
-      </p>
-      <p class="pub__second">
-        Co-authored <em>Viability of Thermoformed Closed-Cell Foam Cores for Carbon Fiber Sandwich Rocket Fins</em>,
-        presented at the AIAA Region II Student Conference; <strong>forthcoming in the AIAA Journal</strong>.
-      </p>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="section__head">
-      <span class="section__num">03</span>
-      <h2>Projects</h2>
-    </div>
-
-    <!-- PROJECT 1: FINS -->
-    <article class="project">
-      <div class="project__meta">
-        <h3 class="project__title">Hypersonic Sounding Rocket Fins</h3>
-        <p class="project__sub">GTXR · Design · Composites · Flight Hardware</p>
-        <p class="project__body">
-          Two years of design and iteration on the fins for GTXR's two-stage hypersonic sounding rocket.
-          I performed high-level design, built a model to calculate flutter speed, evaluated manufacturing
-          methods, machined the molds for thermoforming the fin cores, and ran the carbon-fiber layup and
-          vacuum-bag oven cure that produced the flight hardware.
-        </p>
-        <ul class="project__tags">
-          <li>Carbon-fiber layup</li>
-          <li>Flutter modeling</li>
-          <li>Thermoform molds</li>
-          <li>Vacuum bagging</li>
-        </ul>
-      </div>
-      <div class="gallery">
-        <figure class="gallery__item">
-          <img src="assets/v2_p3_1.jpeg" alt="Vacuum bagging the carbon-fiber fin layup for oven cure" width="1075" height="602" decoding="async" fetchpriority="high">
-          <figcaption>Vacuum bagging after carbon fiber layup</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p3_0.jpeg" alt="Carbon-fiber fin can during tip-to-tip layup" width="680" height="774" loading="lazy" decoding="async">
-          <figcaption>Fin can during tip to tip layup</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p3_2.jpeg" alt="Machined aluminum molds for fin core thermoforming" width="973" height="520" loading="lazy" decoding="async">
-          <figcaption>Machined molds for core thermoforming</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p3_3.jpeg" alt="Prepared carbon-fiber fins staged for final attachment" width="735" height="768" loading="lazy" decoding="async">
-          <figcaption>Prepared fins for final attachment</figcaption>
-        </figure>
-      </div>
-    </article>
-
-    <!-- PROJECT 2: FIN ALIGNMENT JIG -->
-    <article class="project">
-      <div class="project__meta">
-        <h3 class="project__title">Fin Alignment Jig</h3>
-        <p class="project__sub">GTXR · Tooling Design · CAM · Precision Fixturing</p>
-        <p class="project__body">
-          GTXR's 2023–2024 rocket was lost to roll coupling. Our fin-cant study showed we needed a
-          <strong>1.5° cant</strong> for a satisfactory spin-stabilization margin. I identified the required cant,
-          generated the CAD for an adjustable alignment jig, CAM-programmed it, and machined the aluminum
-          components, a reusable tool accurate enough to take roll coupling off the table.
-        </p>
-        <ul class="project__stats">
-          <li><span class="stat__value">&lt; 0.1°</span><span class="stat__label">alignment tolerance</span></li>
-          <li><span class="stat__value">1.5°</span><span class="stat__label">target fin cant</span></li>
-          <li><span class="stat__value">100%</span><span class="stat__label">adjustable to future designs</span></li>
-        </ul>
-        <ul class="project__tags">
-          <li>SolidWorks</li>
-          <li>CAMWorks</li>
-          <li>GD&amp;T / tolerancing</li>
-          <li>CNC machining</li>
-        </ul>
-      </div>
-      <div class="gallery">
-        <figure class="gallery__item">
-          <img src="assets/v2_p4_0.webp" alt="Exploded 3D CAD view of the fin alignment jig assembly" width="793" height="660" loading="lazy" decoding="async">
-          <figcaption>Exploded 3D CAD view of alignment jig</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p4_1.webp" alt="Machined aluminum alignment jig parts" width="800" height="1066" loading="lazy" decoding="async">
-          <figcaption>Machined alignment jig parts</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p5_1.jpeg" alt="Alignment jig clamped onto the rocket body setting the fin cant angle" width="764" height="839" loading="lazy" decoding="async">
-          <figcaption>Jig setting fin cant on the airframe</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p5_2.jpeg" alt="Alignment jig prepped for use" width="759" height="839" loading="lazy" decoding="async">
-          <figcaption>Alignment jig prepped for use</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p5_0.jpeg" alt="Alignment jig in use setting fin cant" width="564" height="713" loading="lazy" decoding="async">
-          <figcaption>Alignment jig in use</figcaption>
-        </figure>
-      </div>
-    </article>
-
-    <!-- PROJECT 3: MOCK LAUNCH RAIL -->
-    <article class="project">
-      <div class="project__meta">
-        <h3 class="project__title">Mock Launch Rail</h3>
-        <p class="project__sub">GTXR · Rapid Design-Build · Structures</p>
-        <p class="project__body">
-          The 2024–2025 GTXR architecture needed a modified launch rail, fast. In <strong>two weeks</strong> I ran the
-          bending and buckling calculations, modeled the components in CAD, and manufactured all the wood, steel,
-          and aluminum parts, producing a fully functional assembled rail used for the mock launch test.
-        </p>
-        <ul class="project__tags">
-          <li>Bending / buckling analysis</li>
-          <li>CAD modeling</li>
-          <li>Multi-material fabrication</li>
-          <li>2-week turnaround</li>
-        </ul>
-      </div>
-      <div class="gallery">
-        <figure class="gallery__item">
-          <img src="assets/v2_p6_3.jpeg" alt="Assembled mock launch rail standing vertically with the rocket loaded, team alongside" width="697" height="1069" loading="lazy" decoding="async">
-          <figcaption>Functional rail at the mock test</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p6_0.jpeg" alt="Machined aluminum rail-guide button mounted to a wooden rail" width="578" height="523" loading="lazy" decoding="async">
-          <figcaption>Machined rail-guide hardware</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/v2_p6_1.jpeg" alt="Rocket airframe seated in the wooden launch-rail cradle outdoors" width="578" height="523" loading="lazy" decoding="async">
-          <figcaption>Airframe in the rail cradle</figcaption>
-        </figure>
-      </div>
-    </article>
-
-    <!-- PROJECT 4: SOLIDWORKS SAMPLES -->
-    <article class="project">
-      <div class="project__meta">
-        <h3 class="project__title">SolidWorks &amp; CAD Samples</h3>
-        <p class="project__sub">Personal &amp; Team Projects · CAD · Drafting</p>
-        <p class="project__body">
-          A selection of CAD work beyond the rocket fins: from a fully detailed cuckoo clock with a
-          dimensioned engineering drawing, to a team turbine electric-bike concept, to rocket components
-          like the parachute ring, sustainer shroud, and the alignment-jig tower base drawing.
-        </p>
-        <ul class="project__tags">
-          <li>SolidWorks</li>
-          <li>Detail drawings</li>
-          <li>Surfacing</li>
-          <li>GD&amp;T</li>
-        </ul>
-      </div>
-      <div class="gallery">
-        <figure class="gallery__item gallery__item--render">
-          <img src="assets/v2_p7_0.jpeg" alt="Rendered cuckoo clock CAD model, personal project" width="399" height="486" loading="lazy" decoding="async">
-          <figcaption>Cuckoo clock, personal project</figcaption>
-        </figure>
-        <figure class="gallery__item gallery__item--render">
-          <img src="assets/v2_p7_6.jpeg" alt="Dimensioned engineering drawing of the cuckoo clock core" width="788" height="568" loading="lazy" decoding="async">
-          <figcaption>Cuckoo clock, detail drawing</figcaption>
-        </figure>
-        <figure class="gallery__item gallery__item--render">
-          <img src="assets/v2_p7_5.jpeg" alt="CAD model of a turbine electric bike, team project" width="764" height="799" loading="lazy" decoding="async">
-          <figcaption>Turbine electric bike, team project</figcaption>
-        </figure>
-        <figure class="gallery__item gallery__item--render">
-          <img src="assets/v2_p7_3.jpeg" alt="CAD model of the sustainer shroud" width="387" height="478" loading="lazy" decoding="async">
-          <figcaption>Sustainer shroud</figcaption>
-        </figure>
-        <figure class="gallery__item gallery__item--render">
-          <img src="assets/v2_p7_7.png" alt="Engineering drawing of the alignment jig tower base" width="441" height="662" loading="lazy" decoding="async">
-          <figcaption>Alignment jig tower base drawing</figcaption>
-        </figure>
-      </div>
-    </article>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="section__head">
-      <span class="section__num">04</span>
-      <h2>Skills</h2>
-    </div>
-    <div class="skills">
-      <div class="skills__group">
-        <h3>Software</h3>
-        <ul>
-          <li>SolidWorks</li>
-          <li>CAMWorks</li>
-          <li>ANSYS</li>
-          <li>MATLAB</li>
-          <li>RASAero</li>
-          <li>LaTeX</li>
-        </ul>
-      </div>
-      <div class="skills__group">
-        <h3>Analysis</h3>
-        <ul>
-          <li>FEA</li>
-          <li>Thermodynamics</li>
-          <li>Fluid mechanics</li>
-          <li>Flutter &amp; structural analysis</li>
-        </ul>
-      </div>
-      <div class="skills__group">
-        <h3>Hardware &amp; Manufacturing</h3>
-        <ul>
-          <li>CNC machining &amp; lathe</li>
-          <li>CAM programming</li>
-          <li>GD&amp;T &amp; DFM</li>
-          <li>Waterjet cutting</li>
-          <li>Composite layups</li>
-          <li>3D printing</li>
-          <li>Mechanical testing (Instron)</li>
-          <li>Wind tunnel</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section section--contact">
-    <div class="section__head">
-      <span class="section__num">05</span>
-      <h2>Contact</h2>
-    </div>
-    <div class="contact">
-      <div class="resume-preview">
-        <object class="resume-preview__frame" data="resume.pdf#view=FitH&toolbar=0&navpanes=0" type="application/pdf" aria-label="Résumé preview">
-          <p class="resume-preview__fallback">
-            Your browser can't display the PDF inline.
-            <a href="resume.pdf" target="_blank" rel="noopener">Open the résumé in a new tab ↗</a>
-          </p>
-        </object>
-      </div>
-      <p class="contact__lead">Interested in talking? I'd love to hear from you.</p>
-      <div class="contact__links">
-        <a class="contact__link" href="mailto:nmurcin3@gatech.edu">✉ nmurcin3@gatech.edu</a>
-        <a class="contact__link" href="https://linkedin.com/in/nathaniel-murcin/" target="_blank" rel="noopener">in linkedin.com/in/nathaniel-murcin</a>
-        <a class="contact__link" href="resume.pdf" target="_blank" rel="noopener">↓ Download Résumé (PDF)</a>
-      </div>
-    </div>
-  </section>
-
-  </main>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Nathaniel Murcin · Atlanta, GA</p>
-    <p class="footer__play">
-      <a href="https://nmurcin.github.io/blue-origin-landings/" target="_blank" rel="noopener">landings</a>
-      ·
-      <a href="https://nmurcin.github.io/watch-together/" target="_blank" rel="noopener">watch together</a>
-    </p>
-  </footer>
-
-  <!-- BACK TO TOP -->
-  <button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" aria-hidden="true">
-    <button class="lightbox__close" aria-label="Close image preview">×</button>
-    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous image">‹</button>
-    <img class="lightbox__img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next image">›</button>
-    <p class="lightbox__caption"></p>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="puXqQdYOni_7Xcv1-quEOG1gan9JZYwJJ6wjmhf37nc">
+<title>Nathaniel Murcin | Aerospace Engineering</title>
+<meta name="description" content="Georgia Tech aerospace engineering portfolio: fluid systems, flight hardware, structural analysis, precision tooling, composites, and experimental validation.">
+<link rel="canonical" href="https://nmurcin.github.io/"><meta name="theme-color" content="#102b40">
+<meta property="og:type" content="website"><meta property="og:title" content="Nathaniel Murcin | Aerospace Engineering">
+<meta property="og:description" content="Engineering across fluid systems, flight hardware, structural analysis, precision tooling, composites, and manufacturing. Georgia Institute of Technology.">
+<meta property="og:url" content="https://nmurcin.github.io/"><meta property="og:site_name" content="Nathaniel Murcin">
+<meta property="og:image" content="https://nmurcin.github.io/assets/projects/fins/thermoforming-tooling.jpg">
+<meta property="og:image:width" content="973"><meta property="og:image:height" content="520">
+<meta property="og:image:alt" content="CNC-machined aluminum tooling for GTXR fin-core thermoforming">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Nathaniel Murcin | Aerospace Engineering">
+<meta name="twitter:description" content="Flight hardware, fluid systems, analysis, tooling, and experimental validation at Georgia Tech.">
+<meta name="twitter:image" content="https://nmurcin.github.io/assets/projects/fins/thermoforming-tooling.jpg">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="stylesheet" href="styles.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Nathaniel Murcin","url":"https://nmurcin.github.io/","email":"mailto:nmurcin3@gatech.edu","jobTitle":"Aerospace Engineering Student","affiliation":{"@type":"CollegeOrUniversity","name":"Georgia Institute of Technology"},"knowsAbout":["Fluid systems","Flight hardware","Structural analysis","Precision tooling","Composites manufacturing","Experimental testing"],"sameAs":["https://www.linkedin.com/in/nathaniel-murcin/","https://github.com/nmurcin"]}}</script>
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<a class="brand" href="#top" aria-label="Nathaniel Murcin, back to top">NM<span aria-hidden="true"> / </span><span>Engineering</span></a>
+<div class="nav-controls"><button id="menu-toggle" class="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false">Menu</button><button id="theme-toggle" type="button" aria-label="Switch to dark theme">Dark</button></div>
+<nav id="navigation" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#profile">Profile</a><a href="#contact">Contact</a></nav>
+</header><main id="main">
+<section class="hero wrap" id="top" aria-labelledby="hero-title">
+<div class="hero-copy"><p class="eyebrow">Aerospace Engineering / Georgia Tech</p><h1 id="hero-title">Nathaniel<br>Murcin<span class="gold">.</span></h1><p class="hero-lead">Engineering across fluid systems, flight hardware, structural analysis, precision tooling, and composites.</p><div class="actions"><a class="button primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a><a class="button" href="resume.pdf">Résumé <span class="file-label">PDF</span></a></div></div>
+<figure class="hero-image"><img src="assets/projects/fins/thermoforming-tooling.jpg" width="973" height="520" alt="Machined aluminum tooling used to thermoform GTXR fin cores" fetchpriority="high" decoding="async"><figcaption><span>GTXR / Fin-core thermoforming</span><span>CNC-machined aluminum tooling</span></figcaption></figure>
+</section>
+<div class="education-strip wrap"><p><strong>Georgia Institute of Technology</strong><span>B.S. Aerospace Engineering · Expected May 2027</span></p><p>B.S./M.S. Aerospace Engineering Program<br>Minor in Astrophysics</p><p class="gpa"><strong>4.00</strong><span>GPA</span></p></div>
+<section class="section wrap" id="work" aria-labelledby="work-title">
+<div class="section-heading"><div><p class="eyebrow">01 / Selected engineering work</p><h2 id="work-title">Design decisions.<br>Hardware. Verification.</h2></div><p>Work with Georgia Tech Experimental Rocketry, from concept selection to manufacturing and test.</p></div>
+<nav class="work-index" aria-label="Project index"><a href="#fins"><span>01</span> Fin system</a><a href="#alignment"><span>02</span> Alignment jig</a><a href="#passthrough"><span>03</span> Electrical passthrough</a><a href="#shear"><span>04</span> Composite testing</a><a href="#pursuit"><span>05</span> Manufacturing impact</a></nav>
+<article class="project" id="fins">
+<div class="project-copy"><p class="eyebrow">01 / GTXR · Design &amp; composites</p><h3>Fin design &amp;<br>thermoforming</h3><p class="project-intro">Selecting a fin concept meant considering what could be analyzed and manufactured together.</p><dl class="story"><dt>Design</dt><dd>Led a structured trade study across materials, geometries, and manufacturing constraints. Down-selected concepts using analytical feasibility, machinability, and engineering first principles.</dd><dt>Build</dt><dd>Co-developed and evaluated a thermoforming process for double-wedge PMI foam cores using CNC-machined aluminum tooling.</dd><dt>Verify</dt><dd>Used 3D metrology to evaluate the formed geometry.</dd></dl><div class="result"><strong>0.28 <span>mm</span></strong><p>Average global geometric error</p></div></div>
+<div class="project-visuals gallery" data-gallery="fins"><figure class="wide"><a href="assets/projects/fins/vacuum-bagging.jpg" class="image-link"><img src="assets/projects/fins/vacuum-bagging.jpg" width="1075" height="602" alt="GTXR carbon-fiber fin layup under vacuum bags in the workshop" loading="lazy" decoding="async"></a><figcaption>Carbon-fiber layup and vacuum bagging</figcaption></figure><div class="visual-pair"><figure><a href="assets/projects/fins/thermoforming-tooling.jpg" class="image-link"><img src="assets/projects/fins/thermoforming-tooling.jpg" width="973" height="520" alt="Two machined aluminum tools for forming fin cores" loading="lazy" decoding="async"></a><figcaption>Aluminum thermoforming tooling</figcaption></figure><figure><a href="assets/projects/fins/prepared-fins.jpg" class="image-link"><img src="assets/projects/fins/prepared-fins.jpg" width="735" height="768" alt="Prepared carbon-fiber fins and rectangular composite pieces arranged on a work surface" loading="lazy" decoding="async"></a><figcaption>Prepared fins before attachment</figcaption></figure></div><div class="optional-media" id="fin-design-tree-slot" hidden></div></div>
+</article>
+<article class="project" id="alignment">
+<div class="project-copy"><p class="eyebrow">02 / GTXR · Precision tooling</p><h3>Fin alignment jig</h3><p class="project-intro">A roll-coupling problem established the need to control fin cant during assembly.</p><dl class="story"><dt>Target</dt><dd>A 1.6° target fin cant.</dd><dt>Build</dt><dd>Designed, CAM programmed, and machined a modular four-tower fixture to set the fin alignment.</dd><dt>Verify</dt><dd>Independent metrology verified all four fins within &lt;0.1° of the 1.6° target.</dd></dl><div class="result split-result"><div><strong>1.6<span>°</span></strong><p>Target fin cant</p></div><div><strong>&lt;0.1<span>°</span></strong><p>Verified error · all four fins</p></div></div></div>
+<div class="project-visuals gallery" data-gallery="alignment"><div class="visual-pair alignment-pair"><figure class="cad"><a href="assets/projects/alignment-jig/cad.webp" class="image-link"><img src="assets/projects/alignment-jig/cad.webp" width="793" height="660" alt="Exploded CAD model showing the modular fin alignment jig towers" loading="lazy" decoding="async"></a><figcaption>Design / modular tower assembly</figcaption></figure><figure><a href="assets/projects/alignment-jig/in-use.jpg" class="image-link"><img src="assets/projects/alignment-jig/in-use.jpg" width="764" height="839" alt="Fin alignment fixture beside a carbon-fiber fin on the airframe" loading="lazy" decoding="async"></a><figcaption>Assembly / fixture in use</figcaption></figure></div><figure class="parts-strip"><a href="assets/projects/alignment-jig/machined-parts.webp" class="image-link"><img src="assets/projects/alignment-jig/machined-parts.webp" width="800" height="1066" alt="Machined aluminum tower components arranged on a machine table" loading="lazy" decoding="async"></a><figcaption>Manufacture / machined aluminum components<br><span>Select any image to inspect it at full size.</span></figcaption></figure></div>
+</article>
+<article class="passthrough" id="passthrough"><div><p class="eyebrow">03 / GTXR · Launch integration</p><h3>Emergency electrical<br>passthrough</h3><p>After the sole flight unit failed during launch integration, designed and fabricated a flight-critical NPT electrical passthrough in 14 hours.</p><p>The hardware passed hydrostatic testing at 2× MEOP and enabled successful flight.</p></div><div class="passthrough-evidence"><div class="large-metrics"><div><strong>14<span> h</span></strong><p>Design &amp; fabrication</p></div><div><strong>2<span>× MEOP</span></strong><p>Hydrostatic test passed</p></div></div><div class="optional-media gallery" id="passthrough-photo-slot" data-gallery="passthrough" hidden></div></div></article>
+<article class="shear" id="shear"><div class="shear-heading"><div><p class="eyebrow">04 / GTXR · Experimental validation</p><h3>Composite shear modulus testing</h3></div><div class="criterion"><strong>5<span>%</span></strong><p>Acceptance criterion<br>ANSYS model verified within criterion</p></div></div><div class="test-sequence"><div><span class="sequence-number">01</span><h4>Model</h4><p>Composite sandwich-panel behavior for future fin development.</p></div><div><span class="sequence-number">02</span><h4>Experiment</h4><p>Designed and executed a plate-twist testing apparatus to determine in-plane shear modulus.</p></div><div><span class="sequence-number">03</span><h4>Validation</h4><p>Verified the ANSYS model within a 5% acceptance criterion.</p></div></div><a class="text-link" href="#publications">Related 2024 conference paper <span aria-hidden="true">↗</span></a></article>
+<details class="additional-work"><summary>Additional hardware / Mock launch rail <span aria-hidden="true">+</span></summary><div class="additional-inner"><div><p class="eyebrow">GTXR / 2024–2025 rocket architecture</p><h3>Mock launch rail</h3><p>Completed bending and buckling calculations, CAD modeling, and fabrication of wood, steel, and aluminum components in two weeks. The assembled rail supported the mock launch test.</p><p class="small">Supporting work from the original portfolio.</p></div><div class="gallery visual-pair" data-gallery="rail"><figure><a class="image-link" href="assets/projects/launch-rail/mock-test.jpg"><img src="assets/projects/launch-rail/mock-test.jpg" width="697" height="1069" alt="Assembled launch rail with rocket and team during a mock test outdoors" loading="lazy" decoding="async"></a><figcaption>Assembled rail at the mock test</figcaption></figure><figure><a class="image-link" href="assets/projects/launch-rail/guide.jpg"><img src="assets/projects/launch-rail/guide.jpg" width="578" height="523" alt="Machined aluminum guide hardware installed on the wooden rail" loading="lazy" decoding="async"></a><figcaption>Rail-guide hardware</figcaption></figure></div></div></details>
+</section>
+<section class="experience-section" id="experience" aria-labelledby="experience-title"><div class="wrap section">
+<div class="section-heading"><div><p class="eyebrow">02 / Professional experience</p><h2 id="experience-title">Aerospace systems.<br>Manufacturing impact.</h2></div><p>Industry experience in fluid systems and structural analysis, alongside production tooling and process improvement.</p></div>
+<article class="experience blue" id="blue-origin"><div class="experience-label"><h3>Blue Origin</h3><p>Fluids &amp; Manufacturing<br>Engineering Intern</p><p class="small">May 2026 – Aug 2026<br>Cape Canaveral, FL</p></div><div class="experience-content"><div class="experience-columns"><div><h4>Fluids engineering</h4><p>Designed a cryogenic tank-farm P&amp;ID for a large-scale ground-test facility, reducing component count approximately 60% versus heritage designs.</p><p>Sized, selected, and validated cryogenic piping, valves, and relief devices. Developed the BOM and coordinated directly with suppliers through procurement.</p><p>Performed preliminary hazard analysis and documented CONOPS for formal HAZOP review.</p></div><div><h4>Lunar manufacturing</h4><p>Designed 6 Creo versions of an adaptable gripping fixture, reducing fasteners from eight to one while improving technician usability and preventing slippage, part damage, and metal-chip FOD. The design passed PDR.</p><p>Validated the fixture with hand calculations and Creo static-structural FEA against company yield and ultimate margin criteria.</p></div></div></div></article>
+<article class="experience" id="pursuit"><div class="experience-label"><p class="eyebrow">05 / Manufacturing impact</p><h3>Pursuit Aerospace</h3><p>Engineering Intern</p><p class="small">Aug 2025 – Dec 2025<br>Newburyport, MA</p></div><div class="experience-content"><div class="impact-row"><div><strong>6 s <span>→</span> 1 s</strong><p>Average part load/unload</p></div><p>Designed, built, and deployed <b>15 quick-change dot-peen fixtures</b> using GD&amp;T and DFM.</p></div><div class="impact-row"><div><strong>40 s <span>→</span> 2 s</strong><p>Inspection time</p></div><p>Designed Go/No-Go gauges. Broader one-piece-flow changes reduced time between completed parts by <b>55%</b>.</p></div><div class="impact-row"><div><strong>3 days</strong><p>Lead time reduced</p></div><p>Developed an in-house supercleaning process, qualified by <b>Rolls-Royce and Pursuit Quality</b>, avoiding <b>$1,000/part</b> in outsourced cleaning and shipping.</p></div></div></article>
+<article class="experience compact"><div class="experience-label"><h3>GTXR</h3><p>Fin Design &amp; Manufacturing Lead</p><p class="small">Aug 2023 – Present · Atlanta, GA</p></div><div class="experience-content"><p>Led the fin design trade study and developed flight hardware, manufacturing tooling, and experimental tests for Georgia Tech Experimental Rocketry.</p><a class="text-link" href="#work">Explore the engineering work <span aria-hidden="true">↗</span></a></div></article>
+</div></section>
+<section class="section wrap" id="research" aria-labelledby="research-title"><div class="section-heading"><div><p class="eyebrow">03 / Research &amp; publications</p><h2 id="research-title">Experiment informs design.</h2></div></div><div class="research-grid"><div><h3>Ben T. Zinn<br>Combustion Laboratory</h3><p class="role">Undergraduate Researcher</p><p class="small">Jan 2026 – Present · Atlanta, GA</p><p>Supported reacting jets-in-crossflow experiments by assembling regulated multi-gas delivery hardware and executing established MATLAB/PIV post-processing workflows.</p></div><div class="publications" id="publications"><p class="eyebrow">Co-author &amp; presenter</p><article><p class="small">2024 / AIAA 2024-85690</p><h4><a href="https://arc.aiaa.org/doi/10.2514/6.2024-85690">Shear Modulus Testing in Composite Sandwich Panels <span aria-hidden="true">↗</span></a></h4><p>AIAA Regional Student Conference Proceedings</p></article><article><p class="small">2026 / AIAA 2026-112793</p><h4>Viability of Thermoformed Closed-Cell Foam Cores for Carbon Fiber Sandwich Rocket Fins</h4><p>AIAA Regional Student Conference Proceedings</p></article></div></div></section>
+<section class="profile-section" id="profile" aria-labelledby="profile-title"><div class="section wrap"><div class="section-heading"><div><p class="eyebrow">04 / Engineering profile</p><h2 id="profile-title">Analysis through fabrication.</h2></div><p>Georgia Tech aerospace engineering student with experience connecting engineering analysis, hardware design, manufacturing, and test.</p></div><div class="capabilities"><div><h3>Analysis</h3><p>Structural FEA and structural analysis<br>Bolted joints and flutter analysis<br>P&amp;ID design<br>Cryogenic sizing and safety</p></div><div><h3>Software &amp; methods</h3><p>Creo and static-structural FEA<br>ANSYS<br>MATLAB / PIV post-processing<br>SolidWorks and CAMWorks</p></div><div><h3>Hardware &amp; manufacturing</h3><p>GD&amp;T and design for manufacture<br>CNC mill, lathe, and waterjet<br>Composite layups and 3D printing<br>Instron and experimental testing</p></div></div><div class="coursework"><span class="eyebrow">Selected coursework</span><p>Propulsion · Thermodynamics · Structural Analysis · Aerodynamics · Aerothermodynamics</p></div></div></section>
+<section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="wrap"><p class="eyebrow">05 / Contact</p><div class="contact-heading"><h2 id="contact-title">Let’s talk engineering.</h2><a class="email" href="mailto:nmurcin3@gatech.edu">nmurcin3@gatech.edu <span aria-hidden="true">↗</span></a></div><div class="contact-links"><a href="https://www.linkedin.com/in/nathaniel-murcin/">LinkedIn ↗</a><a href="resume.pdf">Résumé <span class="file-label">PDF</span></a><a href="downloads/Nathaniel_Murcin_Engineering_Portfolio_V2.pdf">Portfolio <span class="file-label">PDF</span></a><a href="https://github.com/nmurcin">GitHub ↗</a></div><footer><p>© <span id="year">2026</span> Nathaniel Murcin</p><a href="#top">Back to top ↑</a></footer></div></section>
+</main>
+<dialog id="lightbox" aria-labelledby="lightbox-caption"><div class="lightbox-controls"><span id="lightbox-count"></span><button type="button" id="lightbox-close" aria-label="Close image preview">Close ×</button></div><img id="lightbox-image" alt=""><div class="lightbox-bottom"><button type="button" id="lightbox-prev" aria-label="Previous image">←</button><p id="lightbox-caption"></p><button type="button" id="lightbox-next" aria-label="Next image">→</button></div></dialog>
+<script src="assets/project-media.js"></script><script src="script.js"></script>
+</body></html>
