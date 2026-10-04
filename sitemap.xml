@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nmurcin.github.io/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://nmurcin.github.io/resume.pdf</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
+<url><loc>https://nmurcin.github.io/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://nmurcin.github.io/projects/alignment/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://nmurcin.github.io/projects/fins/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://nmurcin.github.io/projects/shear/</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://nmurcin.github.io/resume.pdf</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://nmurcin.github.io/portfolio_vNext/output/Nathaniel_Murcin_Engineering_Portfolio_vNext_r2.pdf</loc><lastmod>2026-10-04</lastmod></url>
+<url><loc>https://nmurcin.github.io/projects/launch-rail/</loc></url></urlset>
