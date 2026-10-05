@@ -1,13 +1,12 @@
-﻿/* Navigation, theme selection, and optional full-image viewing. */
+/* Navigation, theme selection, and optional full-image viewing. */
 (() => {
   const root = document.documentElement;
   const theme = document.getElementById('theme-toggle');
   const system = matchMedia('(prefers-color-scheme: dark)');
   function syncTheme() {
     const dark = root.dataset.theme === 'dark';
-    theme.textContent = dark ? 'Light' : 'Dark';
-    theme.setAttribute('aria-label', 'Switch to ' + (dark ? 'light' : 'dark') + ' theme');
-    theme.setAttribute('aria-pressed', String(dark));
+    theme.setAttribute('aria-checked', String(dark));
+    theme.title = 'Switch to ' + (dark ? 'light' : 'dark') + ' mode';
   }
   syncTheme();
   theme.addEventListener('click', () => {
