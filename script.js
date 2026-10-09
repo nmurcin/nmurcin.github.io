@@ -31,7 +31,7 @@
   });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && header.classList.contains('menu-open')) { closeMenu(); menu.focus(); } });
   document.addEventListener('click', event => { if (!header.contains(event.target)) closeMenu(); });
-  matchMedia('(min-width:721px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+  matchMedia('(min-width:1001px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
   document.getElementById('year').textContent = new Date().getFullYear();
 
   const base = document.body.dataset.base || '';
@@ -87,3 +87,5 @@
   });
   dialog.addEventListener('close', () => { document.body.style.overflow = ''; preview.removeAttribute('src'); trigger?.focus(); });
 })();
+
+(() => {const nav=[...document.querySelectorAll('#navigation a')];const sections=nav.map(a=>document.getElementById(a.hash.slice(1))).filter(Boolean);if(!sections.length)return;const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);if(visible.length){nav.forEach(a=>{if(a.hash==='#'+visible[0].target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}},{rootMargin:'-10% 0px -50% 0px',threshold:[0,.1,.5]});sections.forEach(s=>observer.observe(s));})();
