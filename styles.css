@@ -192,3 +192,45 @@ html{scroll-padding-top:32px}.anchor{scroll-margin-top:32px}
 .contribution-list li+li{margin-top:10px}
 #fins .inline-result strong{display:block;font-size:2.5rem;line-height:1.2;letter-spacing:-.04em;margin-bottom:10px}
 #fins .inline-result span{display:block}
+
+/* Fluids and design refresh, November 2026: project grid, Blue Origin callout, trade tables, flight gallery. */
+.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project-pair .inline-result{margin-top:18px}
+.project-pair .inline-result strong{display:block;font-size:2.5rem;line-height:1.2;letter-spacing:-.04em;margin-bottom:10px}
+.project-pair .inline-result span{display:block}
+.project-preview.preview-small{background:var(--surface);padding:16px}
+.project-preview.preview-small .image-link{display:block}
+.project-preview.preview-small img{width:auto;max-width:100%;max-height:300px;margin-inline:auto}
+.project-wide{margin-top:28px;border:1px solid var(--line);border-radius:6px;padding:32px;background:var(--paper)}
+.project-wide h3{font-size:1.75rem;line-height:1.2}
+.project-wide .metadata{margin-bottom:20px}
+.experience-content .blue-impact{margin-top:24px;padding:2px 0 2px 16px;border:0;border-left:2px solid var(--accent)}
+.experience-content .blue-impact>strong{font-size:1.375rem;line-height:1.4}
+.trade-table{width:100%;border-collapse:collapse;margin-top:28px;font-size:1rem;line-height:1.55}
+.trade-table caption{text-align:left;font-weight:600;color:var(--ink);margin-bottom:8px}
+.trade-table th,.trade-table td{text-align:left;vertical-align:top;padding:12px 16px 12px 0;border-top:1px solid var(--line)}
+.trade-table thead th{font-size:.875rem;font-weight:600;color:var(--muted);border-top:0;padding-bottom:8px}
+.trade-table tbody th{font-weight:600;color:var(--ink);white-space:nowrap}
+.trade-table td{color:var(--muted)}
+.trade-table td.selected{color:var(--accent);font-weight:600}
+.trade-table tbody tr:last-child>*{border-bottom:1px solid var(--line)}
+.trade-table+p{margin-top:24px}
+.case-copy strong{color:var(--ink)}
+.flight-gallery{display:grid;grid-template-columns:minmax(0,.37fr) minmax(0,.37fr) minmax(0,1.7fr);gap:18px;max-width:1000px;margin-inline:auto;align-items:start}
+.flight-gallery img{width:100%;height:auto}
+@media(max-width:1000px){.trade-table tbody th{white-space:normal}}
+@media(max-width:720px){
+ .project-grid{grid-template-columns:1fr}
+ .project-wide{padding:22px}.project-wide .support-project>div:first-child{order:2}
+ .experience-content .blue-impact>strong{font-size:1.25rem}
+ .trade-table thead{display:none}
+ .trade-table tr{display:block;border-top:1px solid var(--line);padding:12px 0}
+ .trade-table tbody tr:last-child{border-bottom:1px solid var(--line)}
+ .trade-table th,.trade-table td,.trade-table tbody tr:last-child>*{display:block;border:0;padding:2px 0}
+ .trade-table td[data-label]::before{content:attr(data-label) ": ";font-weight:600;color:var(--ink)}
+ .flight-gallery{grid-template-columns:1fr 1fr;gap:12px}
+ .flight-gallery .flight-wide{grid-column:1/-1;order:-1}
+}
+@media print{.project-wide{padding:16px;break-inside:avoid}}
+@media(min-width:721px){.intro.calling-card{grid-template-columns:minmax(0,1fr) 280px}.intro.calling-card .document-actions{grid-column:2;grid-row:1/span 3;align-self:start}.intro.calling-card .intro-summary,.intro.calling-card .calling-education{grid-column:1}}
+.trade-table td[data-label="Mass"]{white-space:nowrap}
