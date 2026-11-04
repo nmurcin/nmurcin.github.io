@@ -237,3 +237,5 @@ html{scroll-padding-top:32px}.anchor{scroll-margin-top:32px}
 
 /* While the document buttons are hidden (see GO-LIVE comment in index.html), the intro uses one column. */
 @media(min-width:721px){.intro.calling-card:not(:has(.document-actions)){grid-template-columns:minmax(0,1fr)}}
+/* Project grid: same 3:2 preview box on every card so headings line up across a row. */
+@media(min-width:721px){.project-grid .project-preview:not(.preview-small){aspect-ratio:3/2;overflow:hidden}.project-grid .project-preview:not(.preview-small) img{height:100%;object-fit:cover}}
