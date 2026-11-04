@@ -234,3 +234,6 @@ html{scroll-padding-top:32px}.anchor{scroll-margin-top:32px}
 @media print{.project-wide{padding:16px;break-inside:avoid}}
 @media(min-width:721px){.intro.calling-card{grid-template-columns:minmax(0,1fr) 280px}.intro.calling-card .document-actions{grid-column:2;grid-row:1/span 3;align-self:start}.intro.calling-card .intro-summary,.intro.calling-card .calling-education{grid-column:1}}
 .trade-table td[data-label="Mass"]{white-space:nowrap}
+
+/* While the document buttons are hidden (see GO-LIVE comment in index.html), the intro uses one column. */
+@media(min-width:721px){.intro.calling-card:not(:has(.document-actions)){grid-template-columns:minmax(0,1fr)}}
