@@ -246,3 +246,4 @@ html{scroll-padding-top:32px}.anchor{scroll-margin-top:32px}
 .blue-photo img{display:block;width:100%;height:auto;border-radius:6px}
 @media(max-width:720px){.blue-photo{max-width:260px}}
 .blue-logo{display:block;width:120px;height:auto;background:#fff;padding:8px 10px;border-radius:6px;margin-bottom:16px}
+@media(max-width:720px){.blue-photo{max-width:none}}
