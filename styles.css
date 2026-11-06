@@ -239,3 +239,9 @@ html{scroll-padding-top:32px}.anchor{scroll-margin-top:32px}
 @media(min-width:721px){.intro.calling-card:not(:has(.document-actions)){grid-template-columns:minmax(0,1fr)}}
 /* Project grid: same 3:2 preview box on every card so headings line up across a row. */
 @media(min-width:721px){.project-grid .project-preview:not(.preview-small){aspect-ratio:3/2;overflow:hidden}.project-grid .project-preview:not(.preview-small) img{height:100%;object-fit:cover}}
+
+/* Blue Origin: photo under the label, and a first-screen pointer in the intro. */
+.intro-recent{grid-column:1;font-size:1rem;color:var(--muted)}
+.blue-photo{margin-top:20px}
+.blue-photo img{display:block;width:100%;height:auto;border-radius:6px}
+@media(max-width:720px){.blue-photo{max-width:260px}}
